@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 1080px;
+    display: flex;
+    justify-content: center;
+    
+}
+.calculadora{
+    margin-top: 80px;
+    padding: 20px;
+    width: 330px;
+    height: 450px;
+    background-color: #606060;
+    justify-content: center;
+    display: flex;
+    justify-items: center;
+    border-radius: 20px;
+}
+/* AREA INPUT*/
+input{
+    width: 300px ;
+    text-align: right;
+    font-size: 2.7em;
+    color: black;
+    background-color: white;
+    margin-bottom: 20px;
+}
+/* botoes */
+.botoes{
+    font-size: 20px;
+    width: 65px;
+    padding:12px;
+    margin: 3px;
+}
+.limpar{
+    width: 141px;
+}
+.entrar{
+    
+    
+    height:119px ;
+    position: absolute;
+    margin: 3px 6px;
+
+    
+}
+
+.zero{
+    width: 141px;
+}
