@@ -18,53 +18,60 @@
         <div class="intens-calculadora">
           <!--area input-->   
           <div>
-            <input type="text" placeholder="0" disabled>
+            <input id="resultado" type="text" placeholder="0" disabled>
           </div>
           <!--area botoes-->
           <div>
-            <button type="button" class="btn btn-primary botoes limpar">C</button>
-            <button type="button" class="btn btn-warning botoes">/</button>
-            <button type="button" class="btn btn-warning botoes">X</button>
+            <button onclick="calcular('acao', 'C')" type="button" class="btn btn-primary botoes limpar">C</button>
+            <button onclick="calcular('acao', '/')" type="button" class="btn btn-warning botoes">/</button>
+            <button onclick="calcular('acao', '*')" type="button" class="btn btn-warning botoes">X</button>
           </div>
           <div>
-            <button type="button" class="btn btn-light  botoes ">7</button>
-            <button type="button" class="btn btn-light botoes">8</button>
-            <button type="button" class="btn btn-light botoes">9</button>
-            <button type="button" class="btn btn-warning botoes">-</button>
+            <button onclick="calcular('valor', 7)" type="button" class="btn btn-dark  botoes ">7</button>
+            <button onclick="calcular('valor', 8)" type="button" class="btn btn-dark botoes">8</button>
+            <button onclick="calcular('valor', 9)" type="button" class="btn btn-dark botoes">9</button>
+            <button onclick="calcular('acao', '-')" type="button" class="btn btn-warning botoes">-</button>
           </div>
           <div>
-            <button type="button" class="btn btn-light  botoes ">4</button>
-            <button type="button" class="btn btn-light botoes">5</button>
-            <button type="button" class="btn  btn-light botoes">6</button>
-            <button type="button" class="btn btn-warning botoes">+</button>
+            <button onclick="calcular('valor', 4)" type="button" class="btn btn-dark  botoes ">4</button>
+            <button onclick="calcular('valor', 5)" type="button" class="btn btn-dark botoes">5</button>
+            <button onclick="calcular('valor', 6)" type="button" class="btn  btn-dark botoes">6</button>
+            <button onclick="calcular('acao', '+')" type="button" class="btn btn-warning botoes">+</button>
           </div>
           <div>
-            <button type="button" class="btn  btn-light botoes ">1</button>
-            <button type="button" class="btn btn-light botoes">2</button>
-            <button type="button" class="btn btn-light botoes">3</button>
-            <button type="button" class="btn btn-primary botoes entrar">=</button>
+            <button onclick="calcular('valor', 1)" type="button" class="btn  btn-dark botoes ">1</button>
+            <button onclick="calcular('valor', 2)" type="button" class="btn btn-dark botoes">2</button>
+            <button onclick="calcular('valor', 3)" type="button" class="btn btn-dark botoes">3</button>
+            <button onclick="calcular('acao', '=')" type="button" class="btn btn-primary botoes entrar">=</button>
           </div>
           <div  >
-            <button type="button" class="btn btn-light  botoes zero">0</button>
-            <button type="button" class="btn btn-warning botoes">.</button>
+            <button onclick="calcular('valor', 0)" type="button" class="btn btn-dark  botoes zero">0</button>
+            <button onclick="calcular('valor', '.')" type="button" class="btn btn-warning botoes">.</button>
           </div>
-
-         
         </div> 
       </div>
     </div>
    
+    <script>
+      function calcular(tipo, valor){
+        
+        if (tipo === 'acao'){
+          if (valor  === 'C'){
+            document.getElementById('resultado').value = ''
+          } 
+          if(valor === '/' || valor === '*' || valor === '-' || valor === '+' || valor === '.' ){
+          document.getElementById('resultado').value += valor
+          }
+          if (valor === '='){
+            var valor_Final = eval(document.getElementById('resultado').value)
+              document.getElementById('resultado').value = valor_Final
+          }
+                
+        } else if(tipo === 'valor'){
+          document.getElementById('resultado').value += valor
+          }
+        console.log(tipo , valor)
+      }
+    </script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
